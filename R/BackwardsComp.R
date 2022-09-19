@@ -105,6 +105,6 @@ backwards <- function(predictionAnalysisListFile){
   return(json)
 }
 
-#backwards("/Users/jreps/Documents/github/PIONEER_clinician_driven_model/inst/settings/predictionAnalysisList_old.json")
+#backwards("/Users/jreps/Documents/github/PIONEER_bigdata_driven_model/inst/settings/predictionAnalysisList_old.json")
 
 

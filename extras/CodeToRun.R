@@ -1,9 +1,9 @@
-library(PIONEER_clinician_driven_model)
+library(PIONEER_bigdata_driven_model)
 #=======================
 # USER INPUTS
 #=======================
 # The folder where the study intermediate and result files will be written:
-outputFolder <- "C:/PIONEER_clinician_driven_modelResults"
+outputFolder <- "C:/PIONEER_bigdata_driven_modelResults"
 
 # Details for connecting to the server:
 dbms <- "you dbms"
@@ -28,7 +28,7 @@ cohortDatabaseSchema <- 'work database schema'
 tempEmulationSchema <- NULL
 
 # table name where the cohorts will be generated
-cohortTable <- 'PIONEER_clinician_driven_modelCohort'
+cohortTable <- 'PIONEER_bigdata_driven_modelCohort'
 
 # here we specify the databaseDetails using the 
 # variables specified above
@@ -47,7 +47,7 @@ databaseDetails <- PatientLevelPrediction::createDatabaseDetails(
 # specify the level of logging 
 logSettings <- PatientLevelPrediction::createLogSettings(
         verbosity = 'INFO', 
-        logName = 'PIONEER_clinician_driven_model'
+        logName = 'PIONEER_bigdata_driven_model'
 )
 
 
@@ -78,7 +78,7 @@ createShiny <- FALSE
 
 #=======================
 
-PIONEER_clinician_driven_model::execute(
+PIONEER_bigdata_driven_model::execute(
         databaseDetails = databaseDetails,
         outputFolder = outputFolder,
         createProtocol = createProtocol,

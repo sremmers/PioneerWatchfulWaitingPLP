@@ -1,6 +1,6 @@
 # Copyright 2020 Observational Health Data Sciences and Informatics
 #
-# This file is part of PIONEER_clinician_driven_model
+# This file is part of PIONEER_bigdata_driven_model
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 #' Execute the Study
 #'
 #' @details
-#' This function executes the PIONEER_clinician_driven_model Study.
+#' This function executes the PIONEER_bigdata_driven_model Study.
 #' 
 #' @param databaseDetails      Database details created using \code{PatientLevelPrediction::createDatabaseDetails()} 
 #' @param outputFolder         Name of local folder to place results; make sure to use forward slashes
@@ -135,7 +135,7 @@ execute <- function(
     
     predictionAnalysisListFile <- system.file("settings",
       "predictionAnalysisList.json",
-      package = "PIONEER_clinician_driven_model")
+      package = "PIONEER_bigdata_driven_model")
     
     predictionAnalysisList <- tryCatch(
       {PatientLevelPrediction::loadPlpAnalysesJson(file.path(predictionAnalysisListFile))},
@@ -271,13 +271,13 @@ execute <- function(
       tryCatch({
         
         createValidationPackage(
-          devPackageName = 'PIONEER_clinician_driven_model',
+          devPackageName = 'PIONEER_bigdata_driven_model',
           devDatabaseName = databaseDetails$cdmDatabaseName,
           analysisLocation = outputFolder,
           analysisIds = analysesToValidate,
           outputFolder = outputFolder,
-          validationPackageName = 'PIONEER_clinician_driven_modelValidation',
-          description = 'validating models in PIONEER_clinician_driven_model',
+          validationPackageName = 'PIONEER_bigdata_driven_modelValidation',
+          description = 'validating models in PIONEER_bigdata_driven_model',
           createdBy = 'anonymous',
           organizationName = 'none',
           useHydra = useHydra,

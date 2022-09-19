@@ -1,4 +1,4 @@
-Package: PIONEER_clinician_driven_model
+Package: PIONEER_bigdata_driven_model
 Type: Package
 Title: A Skeleton for Prediction Development Studies that use the PatientLevelPrediction Framework
 Version: 1.0.6
