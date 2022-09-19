@@ -1,0 +1,2206 @@
+{
+  "skeletonType": "PatientLevelPredictionStudy",
+  "organizationName": "Erasmus MC - PIONEER",
+  "skeletonVersion": "v1.0.0",
+  "packageName": "PIONEER_bigdata_driven_model",
+  "analyses": [
+    {
+      "targetId": 31,
+      "outcomeId": 27,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 365,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 28,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 365,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 29,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 365,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 30,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 365,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 27,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 730,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 28,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 730,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 29,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 730,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 30,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 730,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 27,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 1826,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 28,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 1826,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 29,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 1826,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 30,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 1826,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 27,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 3650,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 28,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 3650,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 29,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 3650,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 31,
+      "outcomeId": 30,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": [
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionGroupEraLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        },
+        {
+          "temporal": false,
+          "DemographicsAge": true,
+          "ConditionOccurrenceLongTerm": true,
+          "ConditionOccurrenceMediumTerm": true,
+          "ConditionGroupEraLongTerm": true,
+          "ConditionGroupEraMediumTerm": true,
+          "DrugEraLongTerm": true,
+          "DrugEraMediumTerm": true,
+          "DrugGroupEraLongTerm": true,
+          "DrugGroupEraMediumTerm": true,
+          "DrugGroupEraShortTerm": true,
+          "ProcedureOccurrenceLongTerm": true,
+          "ProcedureOccurrenceMediumTerm": true,
+          "MeasurementLongTerm": true,
+          "MeasurementMediumTerm": true,
+          "MeasurementValueLongTerm": true,
+          "MeasurementValueMediumTerm": true,
+          "CharlsonIndex": true,
+          "longTermStartDays": -365,
+          "mediumTermStartDays": -180,
+          "shortTermStartDays": -30,
+          "endDays": 0,
+          "includedCovariateConceptIds": [],
+          "addDescendantsToInclude": false,
+          "excludedCovariateConceptIds": [],
+          "addDescendantsToExclude": false,
+          "includedCovariateIds": [],
+          "attr_class": "covariateSettings",
+          "attr_fun": "getDbDefaultCovariateData"
+        }
+      ],
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "removeSubjectsWithPriorOutcome": false,
+        "priorOutcomeLookback": 1,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 30,
+        "riskWindowStart": 0,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 3650,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": {
+        "numberOutcomestoNonOutcomes": 1,
+        "sampleSeed": 1033,
+        "attr_class": "sampleSettings",
+        "attr_fun": "sameData"
+      },
+      "featureEngineeringSettings": {
+        "attr_class": "featureEngineeringSettings",
+        "attr_fun": "sameData"
+      },
+      "preprocessSettings": {
+        "minFraction": 0.001,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 51499709,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": true,
+        "runfeatureEngineering": true,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    }
+  ],
+  "cohortDefinitions": [
+    {
+      "name": "[PIONEER T3a] new PCa conservative management",
+      "id": 31
+    },
+    {
+      "name": "[PIONEER O7] ER Visit (1)",
+      "id": 27
+    },
+    {
+      "name": "[PIONEER O6] Hospitalization (2)",
+      "id": 28
+    },
+    {
+      "name": "[PIONEER O2] Symptomatic progression (1)",
+      "id": 29
+    },
+    {
+      "name": "[PIONEER O3] Treatment Initiation (1)",
+      "id": 30
+    }
+  ]
+}
