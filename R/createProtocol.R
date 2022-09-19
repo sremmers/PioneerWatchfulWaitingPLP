@@ -17,14 +17,14 @@ createPlpProtocol <- function(
     predictionAnalysisListFile <- system.file(
       "settings",
       "predictionAnalysisList.json",
-      package = "PIONEER_clinician_driven_model"
+      package = "PIONEER_bigdata_driven_model"
     )
   }
   
   protocolLoc <- system.file(
     "protocol",
     "main.Rmd",
-    package = "PIONEER_clinician_driven_model"
+    package = "PIONEER_bigdata_driven_model"
   )
   
   rmarkdown::render(

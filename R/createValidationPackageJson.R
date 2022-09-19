@@ -1,5 +1,5 @@
 createValidationPackage <- function(
-  devPackageName = 'PIONEER_clinician_driven_model',
+  devPackageName = 'PIONEER_bigdata_driven_model',
   devDatabaseName,
   analysisLocation,
   analysisIds = NULL,

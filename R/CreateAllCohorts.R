@@ -1,6 +1,6 @@
 # Copyright 2022 Observational Health Data Sciences and Informatics
 #
-# This file is part of PIONEER_clinician_driven_model
+# This file is part of PIONEER_bigdata_driven_model
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ createCohorts <- function(
                                         cohortTable = databaseDetails$cohortTable
                                       )
   )
-  cohortDefinitionSet <- CohortGenerator::getCohortDefinitionSet(packageName = "PIONEER_clinician_driven_model",
+  cohortDefinitionSet <- CohortGenerator::getCohortDefinitionSet(packageName = "PIONEER_bigdata_driven_model",
                                                                  settingsFileName = "Cohorts.csv",
                                                                  cohortFileNameValue = "cohortId")
   CohortGenerator::generateCohortSet(connection = connection,
@@ -55,7 +55,7 @@ createCohorts <- function(
 }
 
 addCohortNames <- function(data, IdColumnName = "cohortId", nameColumnName = "cohortName") {
-  pathToCsv <- system.file("Cohorts.csv", package = "PIONEER_clinician_driven_model")
+  pathToCsv <- system.file("Cohorts.csv", package = "PIONEER_bigdata_driven_model")
 
   idToName <- utils::read.csv(pathToCsv)
   idToName <- idToName[order(idToName$cohortId), ]
